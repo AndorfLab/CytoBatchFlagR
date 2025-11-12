@@ -1,63 +1,67 @@
 # ${{\color{#236CA6}{\Large{\textnormal{\textsf{cytoFlagR}}}}}}$
-#### A comprehensive framework to objectively assess high-dimensional cytometry data for batch effects
 
-## About
-With the advancement of cytometry techniques, researchers have the ability to create longitudinal immunological studies that generate high-dimensional cytometry datasets. However, acquiring this data over a long period of time and analyzing this data over multiple experimental runs leads to technical variations between these experimental batches, commonly known as ‘batch effects’. Several different approaches to minimize/correct for these batch effects exist. However, there are currently no computational approaches to objectively evaluate data and identify these potential batch effects. cytoFlagR is a unique, automated approach that assesses high-parameter cytometry datasets and provides the user with a comprehensive evaluation of problematic batches and markers present in their data. Important caveat: while this tool is designed to be primarily applied on control samples, it is also able to assess biological samples. However, users should take into consideration the inherent biological variability between their biological samples while interpreting the outcome of cytoFlagR on their data. 
+## Overview
+The cytoFlagR tool intakes cytometry data and outputs information about potential technical batch issues in that data. The tool is automated and provides multiple metrics and visualizations that allow the user to access the quality of their data. 
 
-<dl>
-<h2>This tool consists of five main steps</h2>
+While this tool is designed to be primarily applied on control samples, it is also able to assess biological samples. However, users should take into consideration the inherent biological variability between their biological samples while interpreting the outcome of cytoFlagR.
 
-1. Transformation of FCS files of control samples containing live, pre-gated single cells and preliminary visual inspection of data
-  
- 2. An Inter Quartile Range (IQR) based assessment to check for batch effects for each marker in each control sample provided for the negative and positive populations as well as the percent of positive cells. <br>
- 
- 3. An Earth Mover’s Distance based assessment to identify batch issues within every marker and control sample <br>
- 
- 4. A comprehensive summary of the assessment metrics described indicating potentially problematic batches and markers present in the data <br>
- 
- 5. An unsupervised clustering-based assessment to highlight batch issues present within the unique cell populations of the data <br>
- 
-</dl>
+This tool consists of 5 main parts (each link leads to the relevant Wiki section):
 
-## Download cytoFlagR
+1.	[Pre-processing and visual assessment of the data](https://github.com/AndorfLab/cytoFlagR/wiki/step-1-pre-processing-and-visual-assessment-of-the-data)
+    * Samples (FCS files) are transformed and various plots (a MDS, UMAP, and barplot) are created
+2.	[An Inter Quartile Range (IQR) based assessment](https://github.com/AndorfLab/cytoFlagR/wiki/step-2-interquartile-range-iqr-based-assessment)
+    * Analyzes each marker in each control sample for the negative and positive populations, as well as the percent of positive cells
+3.	[An Earth Mover’s Distance (EMD) based assessment](https://github.com/AndorfLab/cytoFlagR/wiki/step-3-earth-movers-distance-based-assessment)
+    * Uses the EMD equation for pairwise comparisons between every marker in the control samples
+4.	[A comprehensive summary of results (Parts 2 and 3)](https://github.com/AndorfLab/cytoFlagR/wiki/step-4-summary-of-results-for-parts-2-and-3)
+    * Provides the metrics and figures that indicate potential batch issues in the inputted data
+5.	[An unsupervised clustering based assessment](https://github.com/AndorfLab/cytoFlagR/wiki/step-5-unsupervised-clustering-based-assessment)
+    *  Clusters the data to highlight batch issues present within the unique cell populations 
+
+Aditional information about the required input files and the example data are also available in the [Wiki](https://github.com/AndorfLab/cytoFlagR/wiki/cytoFlagR-wiki/). 
+
+## Download
+The ZIP file containing all code can be downloaded by clicking on the *<>Code* button above.
+
+Alternatively, the command line can be used to download the tool. Just copy and paste:
+
 ```
-Download zip from the `<>Code` button above
-
-Or use command line to download cytoFlagR using -
-
 git clone https://github.com/AndorfLab/cytoFlagR.git
 ```
 
+Once you download CytoFlagR, the code to run the various functions can be found in the `R/` folder. 
+
 ## Dependencies
-This tool was developed using R version 4.4.1, the version required to run this tool.
-Download and install R from [here](https://cran.r-project.org/)
+This tool was developed using R version 4.4.1. Other versions may not be compatable with running the tool. Download and install R [here](https://cran.r-project.org/).
 
-cytoFlagR requires several R and BioConductor packages to run.
+CytoFlagR requires several R and BioConductor packages to run.
 
-Use the package_installer.R function to install the missing required packages from the list below
+Use the package_installer.R function to install the required packages:
 ```
 source("package_installer.R")
 
-### required CRAN packages
+# required CRAN packages
 requiredPackages<-c("dplyr","scales","tidyr","reshape2","readr","matrixStats","readxl",
                     "ggplot2","ggpubr","ggridges","MASS","RColorBrewer","cowplot",
                     "randomcoloR","ggrepel","emdist","circlize","gridExtra","stats",
                     "LaplacesDemon","pheatmap","umap","progress","crayon","patchwork",
                     "ggpmisc","viridis","tidyverse","shiny","shinyjs","DT","bslib","shinyjs",
                     "cluster","rstudioapi","grid","shinycssloaders","shinyWidgets")
-### install
+# install
 package_installer(requiredPackages)
-### check if the packages can be loaded
+
+# check if the packages can be loaded
 lapply(requiredPackages, require, character.only = TRUE)
 
-### install Bioconductor package installer
+# install Bioconductor package installer
 checkBiocManager_install()
 
-### required BioConductor packages
+# required BioConductor packages
 required_BioconductorPackages<-c("flowCore","FlowSOM","ComplexHeatmap","limma","ConsensusClusterPlus")
-### install
+
+# install
 BioC_package_installer(required_BioconductorPackages)
-### check if the packages can be loaded
+
+# check if the packages can be loaded
 lapply(required_BioconductorPackages, require, character.only = TRUE)
 ```
-### The code to run cytoFlagR is found in the `R/` folder when you download cytoFlagR and detailed instructions for using cytoFlagR are available on the [wiki page](https://github.com/AndorfLab/cytoFlagR/wiki/cytoFlagR-wiki/).
