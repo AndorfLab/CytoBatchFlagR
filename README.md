@@ -36,7 +36,13 @@ This tool was developed using R version 4.4.1. Other versions may not be compata
 
 CytoFlagR requires several R and BioConductor packages to run.
 
-Use the package_installer.R function to install the required packages:
+First, make sure you set your directory as the `R/` folder of cytoFlagR:
+
+```
+setwd("C:/you/directory/here/cytoFlagR-main/R")
+```
+
+Once the directory is correctly set, you can use the package_installer.R function to install the required packages:
 ```
 source("package_installer.R")
 
