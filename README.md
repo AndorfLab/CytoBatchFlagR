@@ -7,18 +7,18 @@ While this tool is designed to be primarily applied on control samples, it is al
 
 This tool consists of 5 main parts (each link leads to the relevant Wiki section):
 
-1.	[Pre-processing and Visual Assessment of the Data](https://github.com/AndorfLab/cytoFlagR/wiki/cytoFlagR-wiki#step-1-pre-processing-and-visual-assessment-of-the-data)
+1.	[Pre-processing and Visual Assessment of the Data](https://github.com/AndorfLab/cytoFlagR/wiki/Wiki#step-1-pre-processing-and-visual-assessment-of-the-data)
     * Samples (FCS files) are transformed and various plots (a MDS, UMAP, and barplot) are created
-2.	[An Interquartile Range (IQR)-Based Assessment](https://github.com/AndorfLab/cytoFlagR/wiki/cytoFlagR-wiki#step-2-interquartile-range-iqr-based-assessment)
+2.	[An Interquartile Range (IQR)-Based Assessment](https://github.com/AndorfLab/cytoFlagR/wiki/Wiki#step-2-interquartile-range-iqr-based-assessment)
     * Analyzes each marker in each control sample for the negative and positive populations, as well as the percent of positive cells
-3.	[An Earth Mover’s Distance (EMD)-Based Assessment](https://github.com/AndorfLab/cytoFlagR/wiki/cytoFlagR-wiki#step-3-earth-movers-distance-emd-based-assessment)
+3.	[An Earth Mover’s Distance (EMD)-Based Assessment](https://github.com/AndorfLab/cytoFlagR/wiki/Wiki#step-3-earth-movers-distance-emd-based-assessment)
     * Uses the EMD equation for pairwise comparisons between every marker in the control samples
-4.	[A Comprehensive Summary of Results (Parts 2 and 3)](https://github.com/AndorfLab/cytoFlagR/wiki/cytoFlagR-wiki#step-4-summary-of-results-for-parts-2-and-3)
+4.	[A Comprehensive Summary of Results (Parts 2 and 3)](https://github.com/AndorfLab/cytoFlagR/wiki/Wiki#step-4-summary-of-results-for-parts-2-and-3)
     * Provides the metrics and figures that indicate potential batch issues in the inputted data
-5.	[An Unsupervised Clustering Based Assessment](https://github.com/AndorfLab/cytoFlagR/wiki/cytoFlagR-wiki#step-5-unsupervised-clustering-based-assessment)
+5.	[An Unsupervised Clustering Based Assessment](https://github.com/AndorfLab/cytoFlagR/wiki/Wiki#step-5-unsupervised-clustering-based-assessment)
     *  Clusters the data to highlight batch issues present within the unique cell populations 
 
-Aditional information about the required input files and the example data are also available in the [Wiki](https://github.com/AndorfLab/cytoFlagR/wiki/cytoFlagR-wiki/). 
+Aditional information about the required input files and the example data are also available in the [Wiki](https://github.com/AndorfLab/cytoFlagR/wiki/Wiki/). 
 
 ## Download
 The ZIP file containing all code can be downloaded by clicking on the *<>Code* button above.
