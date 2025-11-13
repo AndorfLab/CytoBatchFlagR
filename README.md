@@ -7,7 +7,7 @@ While this tool is designed to be primarily applied on control samples, it is al
 
 This tool consists of 5 main parts (each link leads to the relevant Wiki section):
 
-1.	[Pre-Processing and Visual Assessment of the Data](https://github.com/AndorfLab/cytoFlagR/wiki/cytoFlagR-wiki#step-1-pre-processing-and-visual-assessment-of-the-data)
+1.	[Pre-processing and Visual Assessment of the Data](https://github.com/AndorfLab/cytoFlagR/wiki/cytoFlagR-wiki#step-1-pre-processing-and-visual-assessment-of-the-data)
     * Samples (FCS files) are transformed and various plots (a MDS, UMAP, and barplot) are created
 2.	[An Interquartile Range (IQR)-Based Assessment](https://github.com/AndorfLab/cytoFlagR/wiki/cytoFlagR-wiki#step-2-interquartile-range-iqr-based-assessment)
     * Analyzes each marker in each control sample for the negative and positive populations, as well as the percent of positive cells
@@ -65,3 +65,8 @@ BioC_package_installer(required_BioconductorPackages)
 # check if the packages can be loaded
 lapply(required_BioconductorPackages, require, character.only = TRUE)
 ```
+## Citations
+
+Eswar, S., Koenig, Z. T., Tursi, A. R., Cobeña-Reyes, J., Tilburgs, T., & Andorf, S. (2025). cytoFlagR: A comprehensive framework to objectively assess high-parameter cytometry data for batch effects. bioRxiv : the preprint server for biology, 2025.05.27.656370. https://doi.org/10.1101/2025.05.27.656370
+
+Koenig, Z., Andorf, S., Tilburgs, T., & Eswar, S. (2025). cytoFlagR: Spectral flow cytometry dataset [Data set]. Zenodo. https://doi.org/10.5281/zenodo.15388817
