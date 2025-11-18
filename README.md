@@ -1,9 +1,11 @@
-# ${{\color{#236CA6}{\Large{\textnormal{\textsf{cytoFlagR}}}}}}$
+# ${{\color{#236CA6}{\Large{\textnormal{\textsf{cytoFlagR}}}}}}$ 
 
 ## Overview
 The cytoFlagR tool intakes cytometry data and outputs information about potential technical batch issues in that data. The tool is automated and provides multiple metrics and visualizations that allow the user to access the quality of their data. 
 
 While this tool is designed to be primarily applied on control samples, it is also able to assess biological samples. However, users should take into consideration the inherent biological variability between their biological samples while interpreting the outcome of cytoFlagR.
+
+Please note: This tool is currently in development. Some documentation and code may change in the imminent future. Check back regularly for updates and report any issues you encounter.
 
 This tool consists of 5 main parts (each link leads to the relevant Wiki section):
 
